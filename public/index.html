@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title> JMeesters.nl || CV </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+  <!-- JQUERY  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- LinkedIn -->
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+  <!--  React logo -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+    <!-- #### THIS.probably.needs.replacing.for.the.React.way || <script type=yepperdepep> It works for now </script> #### -->
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+    // index page
+      $(".list-item").hover(function(event){
+        $(this).css({"font-size": "1.2em", "color": "#FFD700"})
+      },
+      function(){
+        $(this).css({"font-size": "inherit", "color": "inherit"})
+      });
+
+    // end index page
+
+    // contact page
+      $(".dontShowEmail").prop('checked', true)
+
+      $(".dontShowEmail").click(function(event) {
+        $(".show-email").attr("checked", false),
+        $("#email").css({"visibility": "hidden", "opacity": 0}),
+        $(".shows").empty(),
+        showEmail()
+      }) // end contact page
+
+    // end of document ready
+    });
+
+    // index page
+    function contact() {
+      location.href = "./contact";
+    };
+
+    function indexPage() {
+      location.href = "./";
+    }
+    $(document).ready(function(){
+
+    // index page
+      $(".list-item").hover(function(event){
+        $(this).css({"font-size": "1.2em", "color": "#FFD700"})
+      },
+      function(){
+        $(this).css({"font-size": "inherit", "color": "inherit"})
+      });
+
+    // end index page
+
+    // contact page
+      $(".dontShowEmail").prop('checked', true)
+
+      $(".dontShowEmail").click(function(event) {
+        $(".show-email").attr("checked", false),
+        $("#email").css({"visibility": "hidden", "opacity": 0}),
+        $(".shows").empty(),
+        showEmail()
+      }) // end contact page
+
+    // end of document ready
+    });
+
+    // index page
+    function contact() {
+      location.href = "./contact";
+    };
+
+    function indexPage() {
+      location.href = "./";
+    }
+
+    // end index page
+
+    // HTML5 Speech Recognition API
+    function startDictation() {
+      $("#red-dot").css({"visibility": "visible", "opacity": 1})
+      if (!('webkitSpeechRecognition' in window)) {
+        upgrade();
+      } else {
+        var recognition = new webkitSpeechRecognition();
+
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.lang = "en-US";
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          var value1 = $('#transcript').value
+            = event.results[0][0].transcript;
+            $('#transcript').attr('value', value1);
+
+          if (value1 === "1 2 3") {
+            $(".shows").append("<span id=show1 >jjeffreymeesters@gmail.com</span>");
+          }
+        recognition.stop();
+        $("#red-dot").css({"visibility": "hidden", "opacity": 0});
+        };
+
+        recognition.onerror = function(event) {
+          return 'Error occurred in recognition: ' + event.error;
+          recognition.stop();
+          $("#red-dot").css({"visibility": "hidden", "opacity": 0})
+        }
+      }
+    }
+
+    // contact page
+    function showEmail(){
+      $(".show-email").attr("checked", "checked")
+      if($(".show-email").is(":checked")) {
+        $("#email").append("<div id=info-input>Type 123 of klik op de microfoon en spreek de getallen uit (engels):</div><br><div id=appended><input type=text name=q id=transcript oninput=show() placeholder=nummers><img onclick=startDictation() id=microphone-img src=../Images/microphone.png /><div id=red-dot></div></input><span id=info>Werkt de microfoon niet?<span id=tiptext>De microfoon is alleen bruikbaar in up to date browsers van Google Chrome en Firefox.</span></span></div>"),
+        $("#email").css({"visibility": "visible", "opacity": 1})
+      } else {
+        $("#email").empty()
+      }
+    }
+
+    function show(event){
+      var show1 = $("#show1").length // if 0 = false || if >1 = true
+      var show2 = $("#show2").length
+      var show3 = $("#show3").length
+
+
+      if ( show1 === 0 ) {
+        var numbers1 = $("input[type=text]").val()
+
+        if (numbers1 === "1") {
+          return $(".shows").append("<span id=show1 >jjeffrey</span>")
+        }
+      }
+
+      if ( show2 === 0 ) {
+          var numbers2 = $("input[type=text]").val()
+
+        if (numbers2 === "12") {
+          return $(".shows").append("<span id=show2 >meesters@</span>")
+        }
+      }
+
+      if ( show3 === 0 ) {
+          var numbers3 = $("input[type=text]").val()
+
+        if (numbers3 === "123") {
+          return $(".shows").append("<span id=show3 >gmail.com</span>"),
+          $("input[type=text]").blur()
+        }
+      }
+
+      if ($("input[type=text]").val() != "123"){
+        $(".shows").empty(),
+        $("#email").css({"visibility": "hidden", "opacity": 0})
+
+      }
+      // Things that are seen, can't be unseen ;)
+    }
+    // end contact page
+
+    // HTML5 Speech Recognition API
+    function startDictation() {
+      $("#red-dot").css({"visibility": "visible", "opacity": 1})
+      if (!('webkitSpeechRecognition' in window)) {
+        upgrade();
+      } else {
+        var recognition = new webkitSpeechRecognition();
+
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.lang = "en-US";
+        recognition.start();
+
+        recognition.onresult = function(event) {
+          var value1 = $('#transcript').value
+            = event.results[0][0].transcript;
+            $('#transcript').attr('value', value1);
+
+          if (value1 === "1 2 3") {
+            $(".shows").append("<span id=show1 >jjeffreymeesters@gmail.com</span>");
+          }
+        recognition.stop();
+        $("#red-dot").css({"visibility": "hidden", "opacity": 0});
+        };
+
+        recognition.onerror = function(event) {
+          return 'Error occurred in recognition: ' + event.error;
+          recognition.stop();
+          $("#red-dot").css({"visibility": "hidden", "opacity": 0})
+        }
+      }
+    }
+
+    // contact page
+    function showEmail(){
+      $(".show-email").attr("checked", "checked")
+      if($(".show-email").is(":checked")) {
+        $("#email").append("<div id=info-input>Type 123 of klik op de microfoon en spreek de getallen uit (engels):</div><br><div id=appended><input type=text name=q id=transcript oninput=show() placeholder=nummers><img onclick=startDictation() id=microphone-img src=../Images/microphone.png /><div id=red-dot></div></input><span id=info>Werkt de microfoon niet?<span id=tiptext>De microfoon is alleen bruikbaar in up to date browsers van Google Chrome en Firefox.</span></span></div>"),
+        $("#email").css({"visibility": "visible", "opacity": 1})
+      } else {
+        $("#email").empty()
+      }
+    }
+
+    function show(event){
+      var show1 = $("#show1").length // if 0 = false || if >1 = true
+      var show2 = $("#show2").length
+      var show3 = $("#show3").length
+
+
+      if ( show1 === 0 ) {
+        var numbers1 = $("input[type=text]").val()
+
+        if (numbers1 === "1") {
+          return $(".shows").append("<span id=show1 >jjeffrey</span>")
+        }
+      }
+
+      if ( show2 === 0 ) {
+          var numbers2 = $("input[type=text]").val()
+
+        if (numbers2 === "12") {
+          return $(".shows").append("<span id=show2 >meesters@</span>")
+        }
+      }
+
+      if ( show3 === 0 ) {
+          var numbers3 = $("input[type=text]").val()
+
+        if (numbers3 === "123") {
+          return $(".shows").append("<span id=show3 >gmail.com</span>"),
+          $("input[type=text]").blur()
+        }
+      }
+
+      if ($("input[type=text]").val() != "123"){
+        $(".shows").empty(),
+        $("#email").css({"visibility": "hidden", "opacity": 0})
+
+      }
+      // Things that are seen, can't be unseen ;)
+    }
+    // end contact page
+  </script>
+
+  </head>
+  
+  <body>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+  </body>
+</html>

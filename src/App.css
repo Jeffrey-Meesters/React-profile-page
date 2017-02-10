@@ -1,0 +1,249 @@
+* {
+  /*margin: 0px;*/
+  padding: 0px;
+}
+
+body {
+  background-color: #F5F5F5;
+  margin: 2%;
+}
+
+h3 {
+  color: #adbed8;
+  margin: 0px;
+}
+
+h4 {
+  color: yellow;
+  font-size: 0.9em;
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+a:link {
+    text-decoration: none;
+    color: #FFA500;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #FFA500;
+}
+
+a:hover {
+  font-weight: bolder;
+  color: #FFA500;
+}
+
+a::after {
+  display:block;
+  font-weight: lighter;
+  height: 1px;
+  color: transparent;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+#header {
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px #000;
+  height: auto;
+  max-width: 100%;
+  background: url('./assets/images/motor.jpg') left;
+  background-size: cover;
+}
+
+  .title {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10%;
+    margin-top: 5px;
+    font-family: 'Kalam', cursive;
+    font-size: 0.8em;
+    }
+
+  .intro {
+    display: block;
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-bottom: 2px;
+  }
+
+  .info {
+    color: #f1ffef;
+    margin-left: 10px;
+  }
+
+  #skills {
+    font-weight: bold;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    margin-top: 3px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #f1ffef;
+    cursor: default;
+  }
+
+    .list-item {
+      font-size: inherit;
+      color: #f1ffef;
+    }
+
+#container1 {
+  display: inline-flex;
+  align-items: baseline;
+  flex-direction: column;
+  box-shadow: 0 0 10px #000;
+  background-color: #f1ffef;
+  margin-bottom: 15px;
+  height: auto;
+  max-width: 100%;
+  font-family: sans-serif;
+  text-align: left;
+  color: #00001a;
+  background: url('./assets/images/about-lights.jpg') left;
+  background-size: cover;
+}
+
+  .about {
+    height: auto;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .class-skills{
+    height: auto;
+    max-width: 100%;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .future-targets{
+    height: auto;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+#container2 {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 0 15px #000;
+  background-color: #f1ffef;
+  height: auto;
+  max-width: 100%;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 0 10px #000;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url(./assets/images/background-woods.jpg) left;
+  background-size: cover;
+}
+
+  .img-off-ikke {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 15px;
+  }
+
+  .container-middle {
+    height: auto;
+    max-width: 100%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    color: #ffeaea;
+  }
+
+  .LI-profile-badge {
+    margin: 10px;
+  }
+
+Footer {
+  text-align: center;
+  min-width: 100%;
+  margin-top: 15px;
+  line-height: 160%;
+}
+
+  .contact-button {
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: 444px) {
+    #header {
+      min-width: 100%;
+    }
+
+    #container2 {
+      min-width: 100%;
+    }
+
+    Footer {
+      min-width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+
+    #header {
+      /*height: 103%;*/
+    }
+
+    .title {
+      font-size: 2.0em;
+    }
+
+    .info {
+      margin-left: 50px;
+      font-size: 3.0em;
+    }
+
+    #container1 {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .about {
+      max-width: 46%;
+    }
+
+    .class-skills {
+      max-width: 47%;
+    }
+
+    .future-targets {
+      margin-left: 11.5%;
+      max-width: 75%;
+      text-align: center;
+    }
+
+    #container2 {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .logo {
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    padding: 2px;
+    font-family: 'Permanent Marker', cursive;
+    background-image: -webkit-radial-gradient(circle, white 50%, black);
+  }
